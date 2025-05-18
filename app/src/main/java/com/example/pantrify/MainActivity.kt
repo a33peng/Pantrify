@@ -94,7 +94,7 @@ fun WelcomeScreen(onStartClicked: () -> Unit) {
             ) {
                 Text(
                     text = stringResource(R.string.start_button),
-                    color = Color.White
+                    color = Color.Red
                 )
             }
         }
