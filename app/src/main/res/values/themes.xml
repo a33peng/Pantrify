@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.Pantrify" parent="android:Theme.Material.Light.NoActionBar" />
+    <!-- composable theme -->
+    <!--    <style name="Theme.Pantrify" parent="android:Theme.Material.Light.NoActionBar" />-->
+
+    <!-- xml and composable compatible theme -->
+    <style name="Theme.Pantrify" parent="Theme.MaterialComponents.DayNight.NoActionBar"/>
 </resources>

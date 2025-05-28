@@ -31,8 +31,8 @@ class MainActivity : ComponentActivity() {
             PantrifyTheme {
                 WelcomeScreen( // passing in a lambda, anonymous function as parameter
                     onStartClicked = {
-                        // launches second activity page
-                        startActivity(Intent(this, SecondActivity::class.java))
+                        // launches inventory page
+                        startActivity(Intent(this, InventoryActivity::class.java))
                     }
                 )
             }
