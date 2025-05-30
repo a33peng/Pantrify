@@ -5,4 +5,11 @@
 
     <!-- xml and composable compatible theme -->
     <style name="Theme.Pantrify" parent="Theme.MaterialComponents.DayNight.NoActionBar"/>
+
+    <!-- button background -->
+    <style name="Button" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:background">#FF75BDBC</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+    </style>
+
 </resources>

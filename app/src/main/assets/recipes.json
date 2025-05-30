@@ -1,0 +1,59 @@
+[
+  {
+    "name": "Spaghetti Bolognese",
+    "servings": 4,
+    "time": "30 min",
+    "ingredients": [
+      "200g spaghetti",
+      "50g parmensan",
+      "50g unsalted butter",
+      "3 eggs",
+      "1 onion",
+      "2 cloves garlic"
+    ],
+    "steps": [
+      "Boil spaghetti until al dente.",
+      "Cook minced meat in a pan.",
+      "Add chopped onion and garlic.",
+      "Pour in tomato sauce and simmer.",
+      "Mix with spaghetti and serve."
+    ]
+  },
+  {
+    "name": "Spaghetti Carbonara",
+    "servings": 4,
+    "time": "20 min",
+    "ingredients": [
+      "200g spaghetti",
+      "100g minced meat",
+      "1 cup tomato sauce",
+      "1 onion",
+      "2 cloves garlic"
+    ],
+    "steps": [
+      "Boil spaghetti until al dente (approx 10mins).",
+      "Finely chop onions and grate the parmensan.",
+      "Beat the 3 eggs in a bowl and add pinch of black pepper",
+      "In large pan on medium heat, melt the butter with the garlic for 5 mins",
+      "Drain the spaghetti and add it to the pan with the garlic and butter along with the 3 egg yolk",
+      "Mix with spaghetti and serve with some grated cheese."
+    ]
+  },
+  {
+    "name": "Fried Rice",
+    "servings": 2,
+    "time": "20 min",
+    "ingredients": [
+      "2 cups cooked rice",
+      "1 egg",
+      "1/2 cup mixed veggies",
+      "2 tbsp soy sauce"
+    ],
+    "steps": [
+      "Scramble egg in a pan.",
+      "Add veggies and cook for 3 mins.",
+      "Add rice and soy sauce.",
+      "Stir-fry everything together."
+    ]
+  }
+]

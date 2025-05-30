@@ -14,13 +14,19 @@
         android:theme="@style/Theme.Pantrify"
         tools:targetApi="31">
         <activity
+            android:name=".HomeActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Pantrify" />
+
+        <activity
             android:name=".InventoryActivity"
             android:exported="true"
             android:theme="@style/Theme.Pantrify" />
 
         <activity
             android:name=".SecondActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.Pantrify" />
 
         <activity
             android:name=".MainActivity"
@@ -32,5 +38,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
