@@ -1,17 +1,14 @@
 package com.example.pantrify
 
-
 import android.content.Intent
+import android.os.Build.VERSION.SDK_INT
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
@@ -19,14 +16,10 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.*
-import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
@@ -34,8 +27,14 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+// import com.android.volley.toolbox.ImageLoader
 import com.example.pantrify.ui.theme.PantrifyTheme
-
+import coil.compose.AsyncImage
+import coil.decode.GifDecoder
+import coil.decode.ImageDecoderDecoder
+import coil.request.ImageRequest
+import androidx.compose.runtime.Composable
+import coil.ImageLoader
 
 class SecondActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,17 +42,44 @@ class SecondActivity : ComponentActivity() {
         setContent {
             PantrifyTheme {
                 MainContent2()
-
-                //setContentView(R.layout.activity_home)
-                //val btnFridge = findViewById<ImageView>(R.id.fridgeButton)
-                // render new activity page if exit button is clicked
-//                btnFridge.setOnClickListener {
-//                    startActivity(Intent(this, InventoryActivity::class.java))
-//                }
             }
         }
     }
 }
+
+@Composable
+fun CatGif(){
+    val context = LocalContext.current
+    // enabled gif to load image
+    val gifEnabledLoader = ImageLoader.Builder(context)
+        .components {
+            if ( SDK_INT >= 28 ) {
+                add(ImageDecoderDecoder.Factory())
+            } else {
+                add(GifDecoder.Factory())
+            }
+        }.build()
+    AsyncImage(
+        model = ImageRequest.Builder(context)
+            .data(R.drawable.clearcatdriving)    // load cat driving gif
+            .build(),
+        imageLoader = gifEnabledLoader,
+        contentDescription = "pusheen driving a car",
+        modifier = Modifier
+            .offset(x = 220.dp, y = 650.dp)
+            .size(150.dp)
+    )
+    Row {
+        Spacer(modifier = Modifier.width(20.dp))
+        Text(
+            "Map",
+            fontSize = 20.sp,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.offset(x = 235.dp, y = 625.dp)
+        )
+    }
+}
+
 
 @Composable
 fun SearchBar() {
@@ -139,11 +165,11 @@ fun FridgeImage() {
         painter = painterResource(id = R.drawable.fridge),
         contentDescription = "Fridge",
         modifier = Modifier
-            .size(160.dp)
+            .size(180.dp)
             .padding(16.dp)
             .offset(x = 20.dp, y = 630.dp)
             .clickable { // render inventory page if fridge image is clicked
-                val intent = Intent(context,InventoryActivity::class.java)
+                val intent = Intent(context, InventoryActivity::class.java)
                 context.startActivity(intent)
             }
     )
@@ -157,7 +183,7 @@ fun FridgeImage() {
     }
 }
 
-// display fridge
+// old version
 @Composable
 fun MapImage() {
     Image(
@@ -194,7 +220,8 @@ fun MainContent2() {
         Spacer(modifier = Modifier.height(25.dp))
     }
     FridgeImage()
-    MapImage()
+    //MapImage()
+    CatGif()
 }
 
 // display preview in IDE emulator
@@ -230,4 +257,10 @@ fun FridgePreview() {
 @Composable
 fun MapPreview() {
     MapImage()
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewCatGif(){
+    CatGif()
 }

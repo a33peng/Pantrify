@@ -40,6 +40,15 @@ android {
 }
 
 dependencies {
+
+    // compose UI
+    implementation("androidx.compose.ui:ui:1.7.0-alpha02")
+    // library dependency to support drawable painters
+    implementation("com.google.accompanist:accompanist-drawablepainter:0.35.0-alpha")
+
+    implementation("io.coil-kt:coil-compose:2.5.0")     // core Coil for Compose
+    implementation("io.coil-kt:coil-gif:2.5.0")        //  support gif
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -52,6 +61,7 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
+    implementation(libs.volley)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
